@@ -1,13 +1,17 @@
-function Bubble(startX, startY, startdirX) {
+function Bubble(startX, startY, startdirX, startsize, frombreaking) {
   this.x = startX;
   this.y = startY;
   this.dirX = startdirX;
-  this.dirY = 1;
-  this.radious = 16;
-  this.speed = 0;
+  this.dirY = 0;
   this.acceleration = 0;
-  this.maxspeed = 8;
   this.horizontalspeed = 1;
+  this.bbsize = startsize;
+  this.bbcolor = color(0, 255, 0);
+  if (frombreaking) this.speed = 3;
+  else this.speed = 0;
+  this.radious = 8 * startsize;
+  this.maxspeed = ((4 * startsize) / 3) + 6;
+
 
   this.move = function() {
     this.speedchange();
@@ -20,7 +24,7 @@ function Bubble(startX, startY, startdirX) {
 
   this.show = function() {
     noStroke();
-    fill(0, 255, 0);
+    fill(this.bbcolor);
     ellipseMode(RADIUS);
     ellipse(this.x, this.y, this.radious, this.radious);
   }
