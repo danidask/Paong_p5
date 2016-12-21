@@ -1,6 +1,8 @@
 <html>
+
 <head>
   <meta charset="UTF-8">
+  <title>Paong</title>
   <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
   <!-- uncomment lines below to include extra p5 libraries -->
   <!--<script language="javascript" src="libraries/p5.dom.js"></script>-->
@@ -9,9 +11,53 @@
   <script language="javascript" type="text/javascript" src="bubbles.js"></script>
   <script language="javascript" type="text/javascript" src="hook.js"></script>
   <!-- this line removes any default padding and style. you might only need one of these values set. -->
-  <style> body {padding: 0; margin: 0;} </style>
+  <style>
+    body {
+      padding: 20;
+      margin: 10;
+      mso-ascii-font-family: Calibri;
+      mso-hansi-font-family: Calibri;
+    }
+    
+    canvas {
+      vertical-align: top;
+    }
+  </style>
+  <style>
+    body {
+      padding: 20px;
+      margin: 10px;
+      mso-hansi-font-family: Calibri;
+    }
+    
+    canvas {
+      vertical-align: top;
+    }
+    
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
 </head>
 
 <body>
+  <h1>Paong</h1>
+  <div align=center>
+  <table>
+    <tr>
+      <td>
+        <div id="canvasP"></div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+  <p>
+    <div align=center>Press the mouse button to trow the hook</div>
+  </p>
+  <!--  <button id="button">Press</button> -->
 </body>
+
 </html>

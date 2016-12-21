@@ -2,7 +2,8 @@ var bubble = [];
 var hook;
 
 function setup() {
-  createCanvas(640, 480);
+  var canvas = createCanvas(640, 480);
+  canvas.parent("canvasP");
 
   bubble[0] = new Bubble(100, height - 400, false, 3, false);
   bubble[1] = new Bubble(200, height - 400, false, 3, false);
