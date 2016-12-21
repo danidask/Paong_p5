@@ -5,12 +5,14 @@ function setup() {
   var canvas = createCanvas(640, 480);
   canvas.parent("canvasP");
 
-  bubble[0] = new Bubble(100, height - 400, false, 3, false);
-  bubble[1] = new Bubble(200, height - 400, false, 3, false);
-  bubble[2] = new Bubble(width / 2, height - 400, false, 3, false);
-  bubble[3] = new Bubble(width - 100, height - 400, true, 3, false);
-  bubble[4] = new Bubble(width - 200, height - 400, true, 3, false);
+  var resetbutton = select('#resetbutton');
+  resetbutton.mousePressed(resetbuttonpressed);
+
+  startstage(1);
 }
+
+
+
 
 function draw() {
   background(235);
@@ -52,4 +54,22 @@ function checkhook() {
 
 function mousePressed() {
   hook = new Hook(mouseX);
+}
+
+function resetbuttonpressed() {
+  startstage(1);
+}
+
+function startstage(stagenumber) {
+  bubble = [];
+  switch (stagenumber) {
+    case 1:
+    default:
+      bubble[0] = new Bubble(100, height - 400, false, 3, false);
+      bubble[1] = new Bubble(200, height - 400, false, 3, false);
+      bubble[2] = new Bubble(width / 2, height - 400, false, 3, false);
+      bubble[3] = new Bubble(width - 100, height - 400, true, 3, false);
+      bubble[4] = new Bubble(width - 200, height - 400, true, 3, false);
+      break;
+  }
 }
